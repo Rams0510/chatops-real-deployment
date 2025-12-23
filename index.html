@@ -1,12 +1,47 @@
+%%writefile index.html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>ChatOps Deployment</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>ChatOps Deployment Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>🚀 Deployed via ChatOps</h1>
-  <p id="status">Waiting for deployment...</p>
+
+  <div class="container">
+    <div class="card">
+      <h1>🚀 ChatOps Deployment Dashboard</h1>
+
+      <div class="status success">
+        ✅ Deployment Successful
+      </div>
+
+      <p class="subtitle">
+        Automated deployment triggered via ChatOps
+      </p>
+
+      <div class="grid">
+        <div class="box">
+          <span class="label">Triggered From</span>
+          <span class="value">Google Colab</span>
+        </div>
+        <div class="box">
+          <span class="label">CI/CD</span>
+          <span class="value">GitHub Actions</span>
+        </div>
+        <div class="box">
+          <span class="label">Notification</span>
+          <span class="value">Slack</span>
+        </div>
+      </div>
+
+      <div id="deployTime" class="time">
+        ⏳ Waiting for deployment...
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
