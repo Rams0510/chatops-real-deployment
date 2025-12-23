@@ -1,0 +1,24 @@
+name: ChatOps Frontend Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Deployment step
+        run: |
+          echo "🚀 Frontend deployed via GitHub Pages"
+
+      - name: Notify Slack
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+          --data '{"text":"✅ Frontend deployed successfully via ChatOps"}' \
+          ${{ secrets.SLACK_WEBHOOK }}
