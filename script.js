@@ -1,5 +1,6 @@
-const now = new Date();
-
-document.getElementById("status").innerHTML =
-  "🔥 Deployment triggered LIVE from Google Colab!<br><br>" +
-  "🕒 Deployed at: " + now.toLocaleString();
+let count = 0;
+setInterval(() => {
+  count++;
+  document.getElementById("status").innerText =
+    "🔥 Live deployment active for " + count + " seconds";
+}, 1000);
